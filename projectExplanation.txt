@@ -1,0 +1,162 @@
+Framework explanation
+In my framework I have automated 4 test cases. I used the Page object model, the TestNg for tests.
+I have divided each web page into classes, so each page has its own class where locators are defined. also for tests,
+I have created a separate class for each test.
+I also created a package for common functionality, in which I included browserUtilities, Base Class, PageFactory,
+ ConfigurationReader, Driver (for cross browser testing) and waits. i BasePageFactory I have used PageFactory.initElements,
+ And in every Page I have extends where I have used FindBy. In BaseClass I have defined setup Method and Teardown,To close Driver
+At the configuration file. I have saved data such as browser and links.
+In Browser Utilities I have defined methods switch to frame ,selectBytext for Dropdowns menu.
+In some cases I have created methods to wait for an element to be present on the page (using waits), ex. success() method.
+In other cases,I have used javascript executor  to scroll to a particular element in the page.
+To validate brokers I have used String[] arrays and I iterate to  each element with foreach loop,
+ if I want to add more brokers I can Add to the Array.
+In Framework faker is used to generate random data.
+
+Test Cases:
+
+Negative Test case:
+
+Test case  1 : User doesn't select a question and clicks the "Next" button.
+Test Steps:
+
+Launch the application and navigate to the page.
+Verify that you are on the expected page.
+Locate the dropdown question element on the page.
+Click the "Next" button without selecting any question.
+Wait for the page to process the action.
+Verify that a red error message is displayed on the page with the text "Please choose a question."
+Verify that the user is still on the same page and cannot proceed to the next page.
+
+Test case 2:User Selects "Maintenance Usage" Question, does not fill the email field
+
+Test Steps:
+
+Launch the application.
+Accept cookies (if required) by clicking the "Accept Cookies" button or any other designated method.
+Navigate to the page where the form is located.
+Verify that you are on the expected page.
+Locate and click the dropdown element labeled "What is your question."
+Select the option "Maintenance Usage" from the dropdown.
+Click the "Next" button.
+Wait for the form to appear on the page.
+Fill out the form with valid data in each field (e.g., name, address, etc.), except leave the email field empty.
+Complete the CAPTCHA by solving the challenge or clicking the appropriate checkbox.
+Click the "Next" button after the form is filled.
+Wait for the validation message "Please enter some valid input. Input is not optional." to appear next to the email field.
+Verify that the validation message "Please enter some valid input. Input is not optional." is displayed next to the email field.
+
+Other negative test cases :
+Here are the negative test cases for Maintenance And Usage :
+
+Empty Item Code: Field left empty, click "Next," expects a required field validation.
+Empty Link Field: Field left empty, click "Next," expects a required field validation.
+Empty Description Area: Field left empty, click "Next," expects a required field validation.
+Empty First Name: Field left empty, click "Next," expects a required field validation.
+Empty Last Name: Field left empty, click "Next," expects a required field validation.
+Invalid Email: Invalid email format, click "Next," expects an email validation message.
+Mismatched Email Verification: Emails don't match, click "Next," expects an email mismatch validation.
+Empty Street Address 1: Field left empty, click "Next," expects a required field validation.
+Empty City: Field left empty, click "Next," expects a required field validation.
+No Country Selected: No country chosen, click "Next," expects a country selection validation.
+No File Uploaded: No file uploaded, click "Next," expects a file upload validation.
+No CAPTCHA Completion: CAPTCHA not completed, click "Next," expects a CAPTCHA completion validation.
+
+Here are test negative test cases for Order Payment Related :
+
+Empty Link Box: Leave the Link Box empty, click "Next," expects a required field validation.
+Empty Description Box: Leave the Description Box empty, click "Next," expects a required field validation.
+Empty First Name: Leave the First Name field empty, click "Next," expects a required field validation.
+Empty Last Name: Leave the Last Name field empty, click "Next," expects a required field validation.
+Invalid Email: Enter an invalid email format in the Email field.
+Mismatched Email Verification: Enter an email address in the Email field, enter a different email address in the Verify Email field.
+Empty First Address: Leave the First Address field empty, click "Next," expects a required field validation.
+Empty City: Leave the City field empty, click "Next," expects a required field validation.
+No Country Selected: Do not select any option from the Country dropdown.
+Empty Postal Code: Leave the Postal Code field empty, click "Next," expects a required field validation.
+No File Uploaded: Do not upload any file using the File Upload field, click "Next," expects a file upload validation.
+No CAPTCHA Completion: Click "Next" without completing the CAPTCHA, expects a CAPTCHA completion validation.
+
+
+Positive Test case :
+
+Test case 3: User chose "Order or Payment Related"
+
+Test Steps:
+
+Launch the application.
+Accept cookies (if required) by clicking the "Accept Cookies" button .
+Navigate to the page where the form is located.
+Verify that you are on the expected page.
+Locate and click the dropdown element labeled "What is your question."
+Select the option "Order or Payment Related" from the dropdown.
+Click the "Next" button.
+Wait for the form to appear on the page.
+Fill out the form with valid data in each field .
+Complete the CAPTCHA by solving the challenge or clicking the appropriate checkbox.
+Click the "Next" button after the form is filled.
+Wait for the confirmation message to appear on the page.
+Verify that a confirmation message with the text "Thank you..." is displayed on the page.
+Optionally, check for any additional elements or information on the page to ensure successful completion.
+
+Test case 4:  User click "Delivery, Return, or Refund"
+Test Steps:
+
+Launch the application.
+Accept cookies (if required) by clicking the "Accept Cookies" button .
+Navigate to the page where the form is located.
+Verify that you are on the expected page.
+Locate and click the dropdown element labeled "What is your question."
+Select the option "Delivery, Return, or Refund" from the dropdown.
+Click the "Next" button.
+Wait for the form to appear on the page.
+Fill out the form with valid data in each field .
+Complete the CAPTCHA by solving the challenge or clicking the appropriate checkbox.
+Click the "Next" button after the form is filled.
+Wait for the confirmation message to appear on the page.
+Verify that a confirmation message with the text "Thank you..." is displayed on the page.
+Optionally, check for any additional elements or information on the page to ensure successful completion.
+
+Test case 5: User Accepts Cookies, Selects "Maintenance Usage"
+Test Steps:
+
+Launch the application.
+Accept cookies by clicking the "Accept Cookies" button .
+Navigate to the page where the form is located.
+Verify that you are on the expected page.
+Locate and click the dropdown element labeled "What is your question."
+Select the option "Maintenance Usage" from the dropdown.
+Click the "Next" button.
+Wait for the form to appear on the page.
+Fill out the form with valid data in each field .
+Complete the CAPTCHA by solving the challenge or clicking the appropriate checkbox.
+Click the "Next" button after the form is filled.
+Wait for the confirmation message to appear on the page.
+Verify that a confirmation message with the text "Thank you..." is displayed on the page.
+
+
+Test case 6: User Selects "Maintenance Usage" Question, Views Additional Text, and Verifies Content
+
+Test Steps:
+
+Launch the application.
+Accept cookies by clicking the "Accept Cookies" button or .
+Locate and click the dropdown element labeled "What is your question."
+Select the option "Maintenance Usage" from the dropdown.
+Wait for the text "how should I clean my wheels?" to be displayed on the page.
+Verify that the text "how should I clean my wheels?" is visible.
+Wait for the additional text to be displayed.
+Verify that the displayed text contains the text "use a brush and water"
+
+My opinion:
+Test Case : blankQuestionTest medium.
+Test Case maintenanceUsageTest hard
+Test Case orderPaymentRelatedTest hard.
+
+
+
+
+
+
+
+
