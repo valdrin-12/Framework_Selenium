@@ -4,7 +4,7 @@ import java.io.FileInputStream;
 import java.util.Properties;
 
 public class ConfigurationReader {
-
+//Commit Configuration Java
     public static Properties properties = new Properties();
 
     static {
