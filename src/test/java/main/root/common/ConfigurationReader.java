@@ -5,6 +5,7 @@ import java.util.Properties;
 
 public class ConfigurationReader {
 //Commit Configuration Java
+    //add
     public static Properties properties = new Properties();
 
     static {
