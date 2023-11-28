@@ -6,7 +6,7 @@ import main.root.common.WaitUtils;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
+//t
 public class BrokersPage extends BasePageFactory {
 
     @FindBy(className = "input-search")
